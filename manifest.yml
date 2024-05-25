@@ -1,0 +1,22 @@
+modules:
+  jira:issuePanel:
+    - key: stash-custom-ui-hello-world-panel
+      resource: main
+      resolver:
+        function: resolver
+      viewportSize: medium
+      title: stash-custom-ui
+      icon: https://developer.atlassian.com/platform/forge/images/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+permissions:
+  scopes:
+    - read:jira-work
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/a57bf363-26f0-4cec-9c42-9ee32d8d0af8
